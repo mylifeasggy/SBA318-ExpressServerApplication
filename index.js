@@ -1,13 +1,13 @@
 import express from "express"
 import bodyParser from "body-parser";
-import usersRoutes from './routes/users.js';
+import usersRoutes from './routes/reservations.js';
 
 
 
 const app = express()
 const port = 3000
 app.use(bodyParser.json());
-app.use("/users", usersRoutes);
+app.use("/reservations", usersRoutes);
 
 // VIEW ENGINE 
 //app.set('view engine', 'ejs');
