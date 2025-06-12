@@ -1,6 +1,8 @@
 import express from "express"
 import bodyParser from "body-parser";
 
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 
@@ -10,21 +12,9 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 let reservations = [
-    {
-        firstName: "Ginellys",
-        lastName: "Medina",
-        date: "2025-09-06",
-        time: "20:00 PM",
-        email: "GinellysMsuarez@gmail.com",
-        phone: "732-277-9594",
-        people: "6"
-    },
-
-
-
-
 
     {
+        id: "605fe58b-885f-41f9-9995-3e284f6b4c81",
         firstName: "Michelangelo",
         lastName: "Medina",
         date: "2025-09-06",
@@ -32,19 +22,32 @@ let reservations = [
         email: "GinellysMsuarez@gmail.com",
         phone: "284-232-23232",
         people: "9"
+    },
+    {
+        id: '10960e54-9272-402e-bc5d-9357f83e9e28',
+        firstName: 'Oussama',
+        lastName: 'Hamani',
+        date: '2025-09-10',
+        time: '08:00pm',
+        email: 'OussamaHamani@gmail.com',
+        phone: '284-232-23232',
+        people: '2'
     }
 ];
 
-
-
+console.log(reservations)
 router.get("/", (req, res) => {
-    res.send("Hello User")
     console.log(reservations)
+    res.send(reservations)
+   
 })
 router.post("/", (req, res) => {
 
     const { firstName, lastName, date, time, email, phone, people } = req.body
+    const id= uuidv4()
+
     const newReservation = {
+        id,
         firstName,
         lastName,
         date,
@@ -52,33 +55,39 @@ router.post("/", (req, res) => {
         email,
         phone,
         people,
+        
     };
+
+
+
+
     reservations.push(newReservation)
-    console.log(newReservation)
+    
     res.status(201).json({ message: 'Reservartion created successfully', newReservation })
 })
 
-router.route("/:phone")
+router.route("/:id")
 
     .get((req, res) => {
-        console.log(reservations)
-        res.send(`Get reservation with phone ${req.params.phone}`)
+        const getbyId = reservations.find(r => r.id ===(req.params.id));
+       
+     if (!getbyId)return res.status(404).send('Item not found')
+        res.send(getbyId)
 
     }).put((req, res) => {
-        req.params.phone;
-        const reservationTobeUpdated = reservations.find((reservation) => reservation.phone === req.params.phone)
+        req.params.id;
+        const rUpdate = reservations.find((reservation) => reservation.id === req.params.id)
+        //const {date , time}
+        rUpdate.date = req.body.date;
+        rUpdate.time = req.body.time;
 
-        
         res.send("Your reservation has been updated")
 
     }).delete((req, res) => {
-        const reservationPhone = req.params.phone;
-        reservations = reservations.filter((reservation) => reservation.Phone !== reservationPhone);
-        console.log(reservationPhone)
-        console.log(reservations)
+        const rDelete = reservations.filter((reservation) => reservation.id !== req.params.id);
+        reservations = rDelete
         res.send("Reservation deleted from the database");
     })
-
 
 export default router;
 
@@ -86,10 +95,10 @@ export default router;
 { 
   "firstName": "Michelangelp", 
   "lastName": "Ferrer", 
-  "Date":"2025-09-10", 
-  "Time":"08:00pm", 
-  "Email":"Milo@gmail.com", 
-  "Phone":"284-232-23232", 
-  "People":"9"
+  "date":"2025-09-10", 
+  "time":"08:00pm", 
+  "email":"Milo@gmail.com", 
+  "phone":"284-232-23232", 
+  "people":"9"
 }*/
   
