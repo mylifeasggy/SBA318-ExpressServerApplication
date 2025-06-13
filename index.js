@@ -9,7 +9,7 @@ const app = express()
 const port = 3000
 app.use(bodyParser.json());
 app.use("/reservations", reservationRoutes);
-app.use("/reviews.js", reviewsRoutes)
+app.use("/reviews", reviewsRoutes)
 
 // VIEW ENGINE 
 //app.set('view engine', 'ejs');

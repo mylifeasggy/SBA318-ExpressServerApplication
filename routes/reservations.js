@@ -1,6 +1,9 @@
 import express from "express"
 import bodyParser from "body-parser";
 
+//import reviewsRoutes from "./routes/review.js"
+
+
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -46,7 +49,7 @@ router.post("/", (req, res) => {
     const { firstName, lastName, date, time, email, phone, people } = req.body
     const id= uuidv4()
 
-    const newReservation = {
+    let newReservation = {
         id,
         firstName,
         lastName,
@@ -71,8 +74,9 @@ router.route("/:id")
     .get((req, res) => {
         const getbyId = reservations.find(r => r.id ===(req.params.id));
        
-     if (!getbyId)return res.status(404).send('Item not found')
+     if (!getbyId) return res.status(404).send('Reservation not found')
         res.send(getbyId)
+
 
     }).put((req, res) => {
         req.params.id;
@@ -85,20 +89,9 @@ router.route("/:id")
 
     }).delete((req, res) => {
         const rDelete = reservations.filter((reservation) => reservation.id !== req.params.id);
-        reservations = rDelete
-        res.send("Reservation deleted from the database");
+        let reservations = rDelete
+        res.status(200).send("Reservation deleted from the database");
     })
 
 export default router;
 
-/*
-{ 
-  "firstName": "Michelangelp", 
-  "lastName": "Ferrer", 
-  "date":"2025-09-10", 
-  "time":"08:00pm", 
-  "email":"Milo@gmail.com", 
-  "phone":"284-232-23232", 
-  "people":"9"
-}*/
-  
