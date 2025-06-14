@@ -48,9 +48,13 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
 
     const { firstName, lastName, date, time, email, phone, people } = req.body
+      if (!firstName || !lastName || !date || !time || !email || !phone || !people) {
+        return res.status(400).send({ error: "Missing one or more required reservation fields." });
+    } 
+    
     const id= uuidv4()
 
-      let newReservation = {
+      const newReservation = {
         id,
         firstName,
         lastName,
@@ -64,11 +68,9 @@ router.post("/", (req, res) => {
 
     reservations.push(newReservation)
 
-    if (!firstName || !lastName || !date || !time || !email || !phone || !people) {
-        return res.status(400).send({ error: "Missing one or more required reservation fields." });
-    } else {
+  
         res.status(201).json({ message: 'Reservartion created successfully', newReservation })
-    }
+    
 
 })
 
@@ -78,7 +80,7 @@ router.route("/:id")
         const reservationbyId = reservations.find(r => r.id ===(req.params.id));
        
      if (!reservationbyId) return res.status(404).send('Reservation not found')
-        return;
+        res.json(reservationbyId);
 
 
     }).put((req, res) => {

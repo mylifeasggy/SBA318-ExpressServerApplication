@@ -28,8 +28,9 @@ app.use("/reviews", reviewsRoutes)
 app.use("/menu", menuRoutes)
 
 // VIEW ENGINE 
-app.set('view engine', 'ejs');
-//app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true })); //To parse HTML form data
+app.set('view engine', 'ejs');// To enable rendering EJS views
+app.use(express.static('public'));
 
 
 //HomePAGE

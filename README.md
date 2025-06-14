@@ -1,8 +1,8 @@
 # SBA318-ExpressServerApplication
 
-Create and use at least two pieces of custom middleware.
+//Create and use at least two pieces of custom middleware.
 
-Create and use error-handling middleware.
+//Create and use error-handling middleware.
 
 Use at least three different data categories (e.g., users, posts, or comments).	
 
@@ -24,17 +24,16 @@ Utilize reasonable data structuring practices.
 
 //Adhere to the guiding principles of REST.
 
-Create and render at least one view using a view template and template engine. This can be a custom template engine or a third-party engine.
+//Create and render at least one view using a view template and template engine. This can be a custom template engine or a third-party engine.
 
 If you are stuck on how to approach this, think about ways you could render the current state of your API's data for easy viewing.
 
-Use simple CSS to style the rendered views.
+//Use simple CSS to style the rendered views.
 
 Note: This is not a test of design; it is a test of serving static files using Express. The CSS can be very simple.	
 
 Include a form within a rendered view that allows for interaction with your RESTful API.
 
-Utilize reasonable code organization practices.	
 
 Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit)
 

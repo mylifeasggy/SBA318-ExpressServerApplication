@@ -1,4 +1,88 @@
-body {
 
- font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+        body{
+        font-family:"Poppins", sans-serif;
+        margin: 0;
+        background-color:#c1121f;
+
+        }
+
+
+        h1, p, a{
+        text-align: center;
+   
+        color: white;
+        margin-left: auto;
+        margin-left: auto;
+    
+        }
+        
+        .rform {
+         
+            background-color:#c1121f;
+            padding: 50px;
+            justify-content: center;
+    
+           
+    
+        }
+        input  {
+            display: block;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 25px;
+            background-color: #ffa5abff;
+            border: 1px solid #ffa5abff;
+            font-family:"Poppins", sans-serif;
+            border-radius: 10px;
+        }
+            
+        
+            #form{
+            height: 150px;
+            width: 400px;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+
+        .submitbtn {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 400px;          
+            color:#da627dff;
+            font-size: small;
+            height: 60px;
+            border: 1px solid #ffa5abff;
+            font-family:"Poppins", sans-serif;
+            background-color: #ffa5abff;
+            border-radius: 10px;
+
+
+        }
+
+        .submitbtn:hover {
+            background-color:#461220;
+            color:white;
+            cursor: pointer; 
+        }
+        ::placeholder {
+            text-align: left;
+            color:#780000;
+            padding-left: 10px;
+        }
+
+        
+
+
+
+
+
