@@ -1,44 +1,20 @@
 # SBA318-ExpressServerApplication
+<h1>Introduction</h1> <br>
 
-//Create and use at least two pieces of custom middleware.
-
-//Create and use error-handling middleware.
-
-Use at least three different data categories (e.g., users, posts, or comments).	
-
-Utilize reasonable data structuring practices.	
-
-//Create GET routes for all data that should be exposed to the client.
-
-//Create POST routes for data, as appropriate. At least one data category should allow for client creation via a POST request.
-
-//Create PATCH or PUT routes for data, as appropriate. At least one data category should allow for client manipulation via a PATCH or PUT request.
-
-//Create DELETE routes for data, as appropriate. At least one data category should allow for client deletion via a DELETE request.
-
-//Include query parameters for data filtering, where appropriate. At least one data category should allow for additional filtering through the use of query parameters.
+This assessment measures your understanding of Node and Express and your capability to implement their features in a practical manner.
 
 
-//Utilize route parameters, where appropriate.
+<h1> Instructions </h1> <br>
+You will create a small Node and Express server application. The topic and content of this application is entirely up to you; be creative!
+
+# SquareOne Restaurant.
+
+Clients can make their own reservation and leave reviews according to their experience. 
+Menu to add new dishes to the menu restaurant. 
 
 
-//Adhere to the guiding principles of REST.
 
-//Create and render at least one view using a view template and template engine. This can be a custom template engine or a third-party engine.
-
-If you are stuck on how to approach this, think about ways you could render the current state of your API's data for easy viewing.
-
-//Use simple CSS to style the rendered views.
-
-Note: This is not a test of design; it is a test of serving static files using Express. The CSS can be very simple.	
-
-Include a form within a rendered view that allows for interaction with your RESTful API.
-
-
-Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit)
-
-Commit frequently to the git repository
-
-Include a README file that contains a description of your application.
-
-Level of effort displayed in creativity, presentation, and user experience.
+| First Header  | Second Header | First Header  | Second Header |
+| ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  
+| Content Cell  | Content Cell  |Content Cell  | Content Cell 
