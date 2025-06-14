@@ -7,6 +7,11 @@ import bodyParser from "body-parser";
 import { v4 as uuidv4 } from 'uuid';
 const router = express.Router();
 
+router.use((req, res, next) => {
+  console.log('Router-level middleware executed');
+  next();
+});
+
 router.use(bodyParser.json());
 
 

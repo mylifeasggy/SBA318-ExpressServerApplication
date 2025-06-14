@@ -6,6 +6,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 const reviewsrouter = express.Router();
 
+reviewsrouter.use((req, res, next) => {
+  console.log('Router-level middleware executed');
+  next();
+});
+
 reviewsrouter.use(bodyParser.json());
 
 let reviews = [

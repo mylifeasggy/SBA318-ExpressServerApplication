@@ -10,36 +10,36 @@ const app = express()
 const port = 3000
 
 
+
+
 app.use(bodyParser.json());
+app.use(express.static('public'))
+
+
+app.use((req, res, next) => {
+  console.log('Request received:', req.method, req.url);
+  next();
+});
+
+
 app.use("/reservations", reservationRoutes);
 app.use("/reviews", reviewsRoutes)
-
-
-
 
 // VIEW ENGINE 
 app.set('view engine', 'ejs');
 
+
+//HomePAGE
 app.get("/", (req, res) => {
 
   res.render('index',{title: 'Home'});
 
 });
 
-/*app.get("/reservations", (req, res) => {
-
-  res.render('reservation');
-
-
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Log the error stack
+  res.status(500).send('Internal Server Error!');
 });
-
-app.get('/reviews',(req, res)=>{
-  res.render('review')
-
-
-})
-
-*/
 
 app.listen(port, () => { 
   console.log(`Express web server listening on port http://localhost:${port}`);
