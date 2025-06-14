@@ -31,10 +31,7 @@ let reviews = [
 
 reviewsrouter.get("/", (req, res) => {
     console.log(reviews)
-
-    for (const review of reviews) {
-        res.send(`${review.comment} ${review.rating}`)
-    }
+      res.render('review')
 
 })
 

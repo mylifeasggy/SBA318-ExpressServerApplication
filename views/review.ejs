@@ -21,23 +21,15 @@
         </a>
     </div>
 
-        <form>
-    <div class="rform">
-    <a href="/reservations">   <h1> Reserve at Square One </h1></a> 
-         <input type="text" placeholder="First name"   name="fname"  required />
-          <input type="text" placeholder="Last Name"   name="lname"  required />
-          <input type="date" name="date" required/>
-          <input type="time" name="time" min="11:00" max="21:00" required/>
-         <input type="email" placeholder="Your email" name="email" required/>
-         <input type="text" placeholder="How many guests" name="people" min="1" max="50" required/>
-        
-         <button class="submitbtn"type="submit"> Reserve </button>
-     </div>
+    <form>
+        <div class="rform">
+            <a href="/reservations">
+                <h1> Reserve at Square One </h1>
+            </a>
     </form>
-
     <div class="leavecoment">
         <form> 
-            <a href="reviews"> <h1> Reviews </h1></a>
+            <label for="title">Reviews</label>
             <lable for="body"> Leave your coment </lable>
             <textarea id="body" required> </textarea>
             <label for="ratings"> Ratings </label>

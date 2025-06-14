@@ -36,8 +36,8 @@ let reservations = [
 
 console.log(reservations)
 router.get("/", (req, res) => {
-    console.log(reservations)
-    //res.send(reservations)
+    res.render('reservation');
+
    
 })
 router.post("/", (req, res) => {

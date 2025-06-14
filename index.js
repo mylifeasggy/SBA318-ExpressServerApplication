@@ -1,7 +1,7 @@
 import express from "express"
 import bodyParser from "body-parser";
 import reservationRoutes from './routes/reservations.js';
-import reviewsRoutes from "./routes/review.js"
+import reviewsRoutes from "./routes/reviews.js"
 
 
 
@@ -21,19 +21,25 @@ app.use("/reviews", reviewsRoutes)
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-  console.log('Homepage');
+
   res.render('index');
 
 });
 
-app.get("/reservations", (req, res) => {
+/*app.get("/reservations", (req, res) => {
 
-  res.render('reservations');
+  res.render('reservation');
 
 
 });
 
+app.get('/reviews',(req, res)=>{
+  res.render('review')
 
+
+})
+
+*/
 
 app.listen(port, () => { 
   console.log(`Express web server listening on port http://localhost:${port}`);
