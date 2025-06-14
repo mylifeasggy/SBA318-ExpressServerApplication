@@ -23,7 +23,7 @@
         </a>
     </div>
 
-    <form action="/reservations" method="post">
+    <form action="/reservations" method="POST">
         <div class="rform">
             <h1> Reserve at Square One </h1>
             <input type="text" placeholder="First name" name="firstName" required />
@@ -31,6 +31,7 @@
             <input type="date" name="date" required />
             <input type="time" name="time" min="11:00" max="21:00" required />
             <input type="email" placeholder="Your email" name="email" required />
+            <input type="tel" placeholder="Phone number" name="phone" required />
             <input type="text" placeholder="How many guests" name="people" min="1" max="50" required />
 
             <button class="submitbtn" type="submit"> Reserve </button>
