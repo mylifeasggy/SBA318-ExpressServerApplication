@@ -2,6 +2,7 @@ import express from "express"
 import bodyParser from "body-parser";
 import reservationRoutes from './routes/reservations.js';
 import reviewsRoutes from "./routes/reviews.js"
+import menuRoutes from "./routes/menu.js"
 
 
 
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 app.use("/reservations", reservationRoutes);
 app.use("/reviews", reviewsRoutes)
+app.use("/menu", menuRoutes)
 
 // VIEW ENGINE 
 app.set('view engine', 'ejs');
