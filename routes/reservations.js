@@ -36,7 +36,7 @@ let reservations = [
 
 console.log(reservations)
 router.get("/", (req, res) => {
-    res.render('reservation');
+    res.render('reservation', {title: 'Reservations'});
 
    
 })

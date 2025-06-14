@@ -30,12 +30,15 @@ let reviews = [
 
 
 reviewsrouter.get("/", (req, res) => {
-    console.log(reviews)
-      res.render('review')
+ 
 
-})
+     const blogs = [
+        {comment: "The food at SquareOne is exceptional! Very tasty and well prepared and you can chose among many menu options. I love the service at the place and the chef is so friendly with the guests and always takes care to offer the best quality! I highly recommend this place.", rating: "5" },
+        {comment: 'Dined at SquareOne with friends, and the experience was amazing! Great ambiance, attentive staff, and the food was to die for.', rating: "4.5"},
+    ]
+      res.render('review',{title:'Reviews', blogs})
 
-
+});
 
 reviewsrouter.post('/', (req, res) => {
     const { reservationId, rating, comment } = req.body
