@@ -6,7 +6,7 @@ This assessment measures your understanding of Node and Express and your capabil
 
 <h1> Instructions </h1> <br>
 You will create a small Node and Express server application. The topic and content of this application is entirely up to you; be creative!
-                                            <h1> Objectives <h1>
+                                            <h1> Objectives </h1>
 Create a server application with Node and Express.
 Create a RESTful API using Express.
 Create Express middleware.
