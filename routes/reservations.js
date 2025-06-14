@@ -5,14 +5,10 @@ import bodyParser from "body-parser";
 
 
 import { v4 as uuidv4 } from 'uuid';
-
-
-
-
-
 const router = express.Router();
 
 router.use(bodyParser.json());
+
 
 let reservations = [
 
@@ -41,7 +37,7 @@ let reservations = [
 console.log(reservations)
 router.get("/", (req, res) => {
     console.log(reservations)
-    res.send(reservations)
+    //res.send(reservations)
    
 })
 router.post("/", (req, res) => {
@@ -61,9 +57,6 @@ router.post("/", (req, res) => {
         
     };
 
-
-
-
     reservations.push(newReservation)
     
     res.status(201).json({ message: 'Reservartion created successfully', newReservation })
@@ -75,7 +68,7 @@ router.route("/:id")
         const getbyId = reservations.find(r => r.id ===(req.params.id));
        
      if (!getbyId) return res.status(404).send('Reservation not found')
-        res.send(getbyId)
+        return;
 
 
     }).put((req, res) => {

@@ -12,7 +12,7 @@ let reviews = [
     {
         id: "b3a1c4bc-aee3-4747-bf2e-5527b52108f1",
         reservationId: '10960e54-9272-402e-bc5d-9357f83e9e28',
-        rating: "1",
+        rating: "5",
         comment: "The food at SquareOne is exceptional! Very tasty and well prepared and you can chose among many menu options. I love the service at the place and the chef is so friendly with the guests and always takes care to offer the best quality! I highly recommend this place."
 
     },
@@ -31,7 +31,10 @@ let reviews = [
 
 reviewsrouter.get("/", (req, res) => {
     console.log(reviews)
-    res.send(reviews)
+
+    for (const review of reviews) {
+        res.send(`${review.comment} ${review.rating}`)
+    }
 
 })
 
@@ -58,32 +61,11 @@ reviewsrouter.post('/', (req, res) => {
 reviewsrouter.delete('/', (req, res) => {
         const cDelete = reviews.filter((r) => r.id !== req.params.id);
         let reviews = cDelete
-        res.status(200).send("Comment deleted from the database");
+        res.status(200).json("Comment deleted from the database");
     })
 
 
 
 //    res.status(404).json({ error: "Comment not found" });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default reviewsrouter;
