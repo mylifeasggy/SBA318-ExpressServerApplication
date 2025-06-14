@@ -14,7 +14,22 @@ Menu to add new dishes to the menu restaurant.
 
 
 
-| First Header  | Second Header | First Header  | Second Header |
-| ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  
-| Content Cell  | Content Cell  |Content Cell  | Content Cell 
+| Endpoits      | Method        |Description    | 
+| ------------- | ------------- | ------------- |
+| /reservations | GET           | List of reservations  | 
+| /reservation | POST | Create a new reservation |
+| /reservations/:id  | GET      | Information about one reservation in specific | 
+| /reservations/:id  | PUT    |Update information about a reservation | 
+| /reservations/:id  | DELETE    |Delete a reservation| 
+| /reviews     | GET            | All the reviews|
+| /reviews     | POST           | Create a new review|
+| /reviews/:id | GET            | Specific review|
+| /reviews/:id | PUT           | Update a pecific review|
+| /reviews/:id | DELETE         | Delete a pecific review|
+| /menu  | GET            |The items in a menu|
+| /menu    | POST           | Create a new plate in the menu|
+| /menu/:id | GET            | Specific plate of the menu|
+| /reviews/:id | PUT           | update the price of a plate|
+| /reviews/:id | DELETE         | Delete a plate|
+
+
