@@ -13,9 +13,9 @@ const port = 3000
 
 
 app.use(bodyParser.json());
-app.use(express.static('public'))
 
 
+//This middleware logs every incoming request's method and URL, then allows the request to proceed. 
 app.use((req, res, next) => {
   console.log('Request received:', req.method, req.url);
   next();
@@ -27,6 +27,7 @@ app.use("/reviews", reviewsRoutes)
 
 // VIEW ENGINE 
 app.set('view engine', 'ejs');
+//app.use(express.static('public'));
 
 
 //HomePAGE
@@ -37,8 +38,9 @@ app.get("/", (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error(err.stack); // Log the error stack
-  res.status(500).send('Internal Server Error!');
+  console.error(err.stack); // console.error(err.stack) prints it to the terminal or log, helping with debugging.  
+  //diagnostic tool that shows a reverse timeline of what your code was doing before the error hit.
+  res.status(500).send('Something Broke!');
 });
 
 app.listen(port, () => { 
