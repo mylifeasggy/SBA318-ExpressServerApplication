@@ -11,12 +11,12 @@ reviewsrouter.use((req, res, next) => {
   next();
 });
 
-reviewsrouter.use(bodyParser.json());
+
 
 let reviews = [
     {
         id: "b3a1c4bc-aee3-4747-bf2e-5527b52108f1",
-        reservationId: '10960e54-9272-402e-bc5d-9357f83e9e28',
+        email:"test@gmail.com",
         rating: "5",
         comment: "The food at SquareOne is exceptional! Very tasty and well prepared and you can chose among many menu options. I love the service at the place and the chef is so friendly with the guests and always takes care to offer the best quality! I highly recommend this place."
 
@@ -24,7 +24,7 @@ let reviews = [
 
     {
         id:"482b815b-455e-4ba2-bc3b-beebc58635d5",
-        reservationId: '605fe58b-885f-41f9-9995-3e284f6b4c81',
+        email:"test@gmail.com",
         rating: "4.5",
         comment: 'Dined at SquareOne with friends, and the experience was amazing! Great ambiance, attentive staff, and the food was to die for.'
 
@@ -33,24 +33,31 @@ let reviews = [
     },
 ];
 
+/*
+{
+"email":"test@gmail.com",
+"rating": 5
+"comment":"amazing food and amazing people"
+}
 
+*/
 reviewsrouter.get("/", (req, res) => {
  
 
-     const blogs = [
+     const comentarios = [
         {comment: "The food at SquareOne is exceptional! Very tasty and well prepared and you can chose among many menu options. I love the service at the place and the chef is so friendly with the guests and always takes care to offer the best quality! I highly recommend this place.", rating: "5" },
         {comment: 'Dined at SquareOne with friends, and the experience was amazing! Great ambiance, attentive staff, and the food was to die for.', rating: "4.5"},
     ]
-      res.render('review',{title:'Reviews', blogs})
+      res.render('review',{title:'Reviews', comentarios})
 
 });
 
 reviewsrouter.post('/', (req, res) => {
-    const { reservationId, rating, comment } = req.body
+    const { rating, comment, email } = req.body
     const id = uuidv4()
     let newReview = {
         id,
-        reservationId,
+        email,
         rating,
         comment
     }

@@ -1,7 +1,5 @@
 import express from "express"
-import bodyParser from "body-parser";
 
-//import reviewsRoutes from "./routes/review.js"
 
 
 import { v4 as uuidv4 } from 'uuid';
@@ -12,7 +10,7 @@ router.use((req, res, next) => {
   next();
 });
 
-router.use(bodyParser.json());
+//router.use(bodyParser.json());
 
 
 let reservations = [

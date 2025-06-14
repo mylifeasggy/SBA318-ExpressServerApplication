@@ -1,5 +1,4 @@
 import express from "express"
-import bodyParser from "body-parser";
 
 //import reviewsRoutes from "./routes/review.js"
 
@@ -13,7 +12,6 @@ router.use((req, res, next) => {
 });
 
 
-router.use(bodyParser.json());
 
 let plates=[
     {

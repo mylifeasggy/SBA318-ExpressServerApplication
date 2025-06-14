@@ -1,5 +1,4 @@
 import express from "express"
-import bodyParser from "body-parser";
 import reservationRoutes from './routes/reservations.js';
 import reviewsRoutes from "./routes/reviews.js"
 import menuRoutes from "./routes/menu.js"
@@ -10,10 +9,10 @@ import menuRoutes from "./routes/menu.js"
 const app = express()
 const port = 3000
 
+app.use(express.urlencoded({ extended: true })); 
+app.use(express.json());
 
 
-
-app.use(bodyParser.json());
 
 
 //This middleware logs every incoming request's method and URL, then allows the request to proceed. 
@@ -28,7 +27,7 @@ app.use("/reviews", reviewsRoutes)
 app.use("/menu", menuRoutes)
 
 // VIEW ENGINE 
-app.use(express.urlencoded({ extended: true })); //To parse HTML form data
+//To parse HTML form data
 app.set('view engine', 'ejs');// To enable rendering EJS views
 app.use(express.static('public'));
 

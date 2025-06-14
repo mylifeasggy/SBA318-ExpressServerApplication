@@ -149,10 +149,9 @@
     <div class="rform">
         <form>
             <h1>Leave a review</h1>
-
+            <input type="email" placeholder="Your email" name="email" required />
             <input type="text" id="body" required> </textarea>
-            <h1>Rating</h1>
-            <input type="number" id="rating" min="0" max="5" required>
+            <input type="number" id="rating" min="0" max="5" placeholder="Rating" required>
             <button class="submitbtn">Submit</button>
         </form>
     </div>
@@ -160,25 +159,14 @@
     <div class="reviews">
 
         <h1> All reviews </h1>
-
-        <% if (blogs.length> 0 ) { %>
-            <% blogs.forEach(blog=> { %>
-
-                <h3 class="comment">
-                    <%=blog.comment %>
-                </h3>
-
-                <p class="rating">
-                <h3> Rating </h3>
-                <%=blog.rating %>
-                    </p>
-
-
-                    <% }) %>
-                        <% } else {%>
-
-                            <p>There are no reviews to display </p>
-                            <%}%>
+        <% if (comentarios.length> 0 ) { %>
+            <% comentarios.forEach(com=> { %>
+                <h3 class="comment"> <%=com.comment %> </h3>
+                <p class="rating"><h3> Rating </h3> <%=com.rating %> </p>
+            
+                <% }) %>
+        <% } else {%>
+            <p>There are no reviews to display </p> <%}%>
     </div>
 
 </body>
